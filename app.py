@@ -10,9 +10,6 @@ from sqlalchemy.ext.declarative import declarative_base #classes into tables
 from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy import create_engine, func, inspect, Column, Integer, String
 
-import psycopg2
-import os
-
 import numpy as np
 
 #################################################
