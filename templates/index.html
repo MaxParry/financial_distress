@@ -1,0 +1,151 @@
+<!DOCTYPE HTML>
+
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <title>Homepage</title>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.9/css/all.css" integrity="sha384-5SOiIsAziJl6AWe0HWRKTXlfcSHKmYV4RBF18PPJ173Kzn7jzMyFuTtk8JA7QQG1" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/styles/styles.css">
+    </head>
+
+    <body>
+        <!-- navbar -->
+        <div class="header">
+            {% include 'header.html' %}
+        </div>
+
+        <!---->
+      <div class="greyd">
+        <div class='container-fluid'>
+              <div class="row">
+                  <div class="col-lg-8 col-md-8">
+                    <div class="row">
+                    <div class="bubble circle">
+                      <div class="inner-text">
+                    <h1><b>Problem Statement</b></h1>
+                    <p>Explore the correlation between violent crime (type and volume) and school shootings from 1990 to 2014.</p>
+                      </div>
+                    </div>
+                  </div>
+
+                  <div class="row">
+                    <div class="bubble-method circle2">
+                      <div class="inner-text-method">
+                        <h1><b>Methodology</b></h1>
+                      <p><b>Step 1</b> - Analyze state data for each year and crime type</p>
+                      <p><b>Step 2</b> - Evaluate school shooting jurisdiction data</p>
+                      <p><b>Step 3</b> - Find reliable, manipulateable data sources</p>
+                      <p><b>Step 4</b> - Determine next steps if no correlation exists</p>
+                    </div>
+                  </div>
+
+                    <div class="bubble-def circle3">
+                      <div class="inner-text-def">
+                        <h1><b>Definitions</b></h1>
+                        <p><b>Violent crimes</b> - murder, assault, kidnapping, burglary.</p>
+                        <p><b>SNAP</b> - Supplemental nutrition assistance program (ala food stamp program).</p>
+                        <p><b>Economic distress indicators</b> - foreclosure rate, SNAP participation rate, employment rate.</p>
+                      </div>
+                    </div>
+                  </div>
+              </div>
+              <div class="col-lg-4 col-md-4 col-sm-12">
+                  <a class="twitter-timeline"  href="https://twitter.com/search?q=school%20shooting" data-widget-id="979068352713736193">Tweets About School Shooting</a>
+                  <script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0],p=/^http:/.test(d.location)?'http':'https';if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src=p+"://platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+              </div>
+
+              <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+              <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+              <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+            </div>
+          </div>
+        </div>
+
+            <div class="slide2" id="slide2-point">
+              <div class='container-fluid'>
+                <div class="row">
+                  <div class="col-lg-12 col-md-12">
+                    <h1><b>Key Findings</b></h1>
+                  </div>
+                </div>
+                  <div class="row">
+                      <div class="col-lg-6 col-md-6">
+                        <div class="slide2-text">
+                        <ul>
+                        <li>No correlation found between school shootings and violent crimes or murders</li>
+                        <li>Violent crime and murder rates have been trending down over the past 25+ years</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                      <div class="col-lg-6 col-md-6">
+                        <div class="slide2-text">
+                        <ul>
+                        <li>No correlation found between school shootings and violent crimes or murders</li>
+                        <li>Violent crime and murder rates have been trending down over the past 25+ years</li>
+                        </ul>
+                      </div>
+                    </div>
+
+                    </div>
+                  </div>
+                </div>
+
+          <div class="team_body">
+            <div class='container-fluid'>
+              <div class="row">
+                <div class="col-lg-12 col-md-12 col-sm-12" id="meet-team">
+                  <h1> Meet the Team </h1>
+                </div>
+              </div>
+              <div class="row">
+                  <div class="col-lg-3 col-md-6 col-sm-12 team_card">
+                    <div class=img_place><img src="../static/images/homepage/jam.png"></div>
+                    <div class=info_box>
+                      <p><b>Jeff Moore</b></p>
+                      <a href="https://www.linkedin.com/in/jefferymoore/"><i class="fab fa-linkedin"></i></a>
+                      <a href="https://github.com/sbvol"><i class="fab fa-github"></i></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-12 team_card">
+                    <div class=img_place><img src="../static/images/homepage/mkp.png"></div>
+                    <div class=info_box>
+                      <p><b>Max Parry</b></p>
+                      <a href="https://www.linkedin.com/in/max-parry-1913a867/"><i class="fab fa-linkedin"></i></a>
+                      <a href="https://github.com/MaxParry"><i class="fab fa-github"></i></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-12 team_card">
+                    <div class=img_place><img src="../static/images/homepage/mnm.png"></div>
+                    <div class=info_box>
+                      <p><b>Nupur Mathur</b></p>
+                      <a href="https://www.linkedin.com/in/nupurnmathur/"><i class="fab fa-linkedin"></i></a>
+                      <a href="https://github.com/thenups"><i class="fab fa-github"></i></a>
+                    </div>
+                  </div>
+                  <div class="col-lg-3 col-md-6 col-sm-12 team_card">
+                    <div class=img_place><img src="../static/images/homepage/ams.png"></div>
+                    <div class=info_box>
+                      <p><b>Antonio Sow</b></p>
+                      <a href="https://www.linkedin.com/in/sowantonio/"><i class="fab fa-linkedin"></i></a>
+                      <a href="https://github.com/projectmt"><i class="fab fa-github"></i></a>
+                    </div>
+                  </div>
+                <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+              </div>
+            </div>
+            </div>
+
+          <!--Footer-->
+          <div class="footer">
+              {% include 'footer.html' %}
+          </div>
+
+    </body>
+</html>

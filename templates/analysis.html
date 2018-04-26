@@ -1,0 +1,80 @@
+<!DOCTYPE HTML>
+
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <title>Crime to Mass Shootings</title>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/styles/styles.css">
+    </head>
+
+    <body>
+        <!-- navbar -->
+        <nav class="navbar navbar-toggleable-sm navbar-light bg-faded navbar-full">
+            <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <a class="nav-link" id=homeButton href="index.html">JAMN</a>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav ml-auto">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                            Analysis
+                        </a>
+                        <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <a class="dropdown-item" href="">Details</a>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                            <a class="nav-link" href="">Samples</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="">Data</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+
+        <!--Mapbox Map Container-->
+
+        <div class='container-fluid'>
+          <div class="row">
+            <div class="col-lg-10 col-sm-12">
+              <div class="summary_container">
+              <div class="summary_head">
+                <h1>Summary</h1>
+              </div>
+                <div class="summary_body"></div>
+              </div>
+                <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+                <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+                <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+            </div>
+          </div>
+        </div>
+
+
+          <!--Footer-->
+      <footer class="page-footer">
+          <div class="row" style="background:linear-gradient(90deg,#00ade6 0,#05e3d5)">
+              <div class="col-12" style="height:5px">
+              </div>
+          </div>
+          <div class="row" style="background-color:black; height:140px">
+            <div class="col-lg-10 col-md-9 col-sm-9"></div>
+            <div class="col-lg-2 col-md-3 col-sm-3">
+              <div id="team_name">
+                <p>&#169; functional_vice( )</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </footer>
+
+        <!--Bootstrap JS/Jquery cdn-->
+
+    </body>
+</html>
