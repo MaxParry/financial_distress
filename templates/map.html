@@ -1,0 +1,94 @@
+<!DOCTYPE HTML>
+
+<html lang='en'>
+    <head>
+        <meta charset='utf-8'>
+        <meta name='viewport' content='initial-scale=1,maximum-scale=1,user-scalable=no' />
+        <title>Crime to Mass Shootings</title>
+        <script src='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.js'></script>
+        <link href='https://api.mapbox.com/mapbox-gl-js/v0.44.1/mapbox-gl.css' rel='stylesheet' />
+        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css" integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+        <link rel="stylesheet" href="../static/styles/styles.css">
+        <script src="//code.jquery.com/jquery-1.10.2.js"></script>
+    	<script>
+            $('#header').load('header.html');
+    	</script>
+    </head>
+
+    <body>
+        <!-- Header -->
+        <div class="header">
+            {% include 'header.html' %}
+        </div>
+
+        <!--Mapbox Map Container-->
+        <div class="greyd">
+          <h1 style="color:#f5f5f5">Choropleth</h1>
+          <div class="container-fluid">
+            <div class="row">
+              <div class="col-lg-10 col-sm-12">
+                <div class="map-container">
+                <nav id="menu"></nav>
+                <div id='map'></div>
+                <div class='map-overlay' id='legend'></div>
+                <div class='shootings-legend'>
+                  <h2>School Shooting Fatalities</h2>
+                  <div class='row colors'>
+                  </div>
+                  <div class='row labels'>
+                    <div class='label'>0</div>
+                    <div class='label'>1</div>
+                    <div class='label'>2</div>
+                    <div class='label'>3</div>
+                    <div class='label'>4</div>
+                    <div class='label'>5+</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-2 col-sm-12" style="margin-left:none;">
+              <div class="row">
+                <div id='features'><div id='pd'><p>Hover over a state!</p></div>
+              </div>
+              <div class="row">
+                <div id='console'>
+                      <!--To be: Crime Detail Console-->
+                      <h1>Map Filter</h1>
+                        <!--To be: Crime Events Scale for reference-->
+
+                        <!--To be: Timeline Slide Bar-->
+                        <div class='session' id='sliderbar'>
+                          <h2>Active Year <label id='active-year'>1990</label></h2>
+                          <input id='slider' class='row' type='range' min='1990' max='2016' step='1' value='1995' />
+                        </div>
+                        <!--Toggle Layers-->
+                        <div class='session'>
+                          <!-- <h2>Category Layers</h2> -->
+                          <div class='row' id='filters'>
+                          </div>
+                        </div>
+                        <!--JavaScript InPut-->
+                      <!--SWITCH BACK TO PROPER APP.JS FOLDER AFTER DEVELOPMENT-->
+
+                      <script type="text/javascript" src="../static/js/map.js"></script>
+                      <script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>
+                      <script src="https://cdnjs.cloudflare.com/ajax/libs/tether/1.4.0/js/tether.min.js" integrity="sha384-DztdAPBWPRXSA/3eYEEUWrWCy7G5KFbe8fFjk5JAIxUYHKkDx6Qin1DkWx51bBrb" crossorigin="anonymous"></script>
+                      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/js/bootstrap.min.js" integrity="sha384-vBWWzlZJ8ea9aCX4pEW3rVHjgjt7zpkNpZk+02D9phzyeVkE+jo0ieGizqPLForn" crossorigin="anonymous"></script>
+                      <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+        <!--Footer-->
+        <div class="footer">
+            {% include 'footer.html' %}
+        </div>
+
+        <!--Bootstrap JS/Jquery cdn-->
+
+    </body>
+</html>
