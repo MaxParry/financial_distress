@@ -24,6 +24,12 @@ def index():
 
     return render_template('index.html')
 
+@app.route('/api/v1.0/<age>/<salary>/<dependents>/<creditLine>/<creditLimit>/<realEstate>/<monthlySpend>/<totalDebt>/<overdue>')
+def getResult():
+
+
+
+    return jsonify(result)
 
 if __name__ == '__main__':
     app.run(debug=True)
