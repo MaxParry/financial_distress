@@ -96,11 +96,17 @@ function goMoney(instruct,$div) {
 
 function submitButtonClick(){
 
+    var baseURL = 'http://127.0.0.1:5000/';
+    var apiBase = 'api/v1.0';
+    var query = '';
+
     for (var i=0; i<inputFields.length; i++) {
         var value = inputFields[i].value;
-        console.log(value);
+        query = query + '/' + value;
+        console.log(query);
     };
-    // console.log('clicked');
+
+
 
 };
 
