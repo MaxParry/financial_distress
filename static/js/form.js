@@ -99,14 +99,24 @@ function submitButtonClick(){
     var baseURL = 'http://127.0.0.1:5000/';
     var apiBase = 'api/v1.0';
     var query = '';
-
     for (var i=0; i<inputFields.length; i++) {
         var value = inputFields[i].value;
         query = query + '/' + value;
-        console.log(query);
     };
+    console.log(query);
+    var fullQuery = baseURL + apiBase + query
 
+    // Create a request variable and assign a new XMLHttpRequest object to it.
+    var request = new XMLHttpRequest();
+    // Open a new connection, using the GET request on the URL endpoint
+    request.open('GET', fullQuery, true);
 
+    request.onload = function () {
+        var data = JSON.parse(this.response);
+        console.log(data);
+        }
+    // Send request
+    request.send();
 
 };
 

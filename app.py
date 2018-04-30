@@ -11,6 +11,15 @@ from sqlalchemy.orm import Session, sessionmaker
 from sqlalchemy import create_engine, func, inspect, Column, Integer, String
 
 import numpy as np
+import pandas as pd
+
+from sklearn.preprocessing import StandardScaler
+from sklearn.externals import joblib
+from sklearn.datasets import make_regression
+
+from model.result import makePredictions
+from model.modelTuning import shapeItUp,add_incomeperdependent_column,add_indicator_column
+
 
 #################################################
 # Flask Setup
@@ -24,10 +33,25 @@ def index():
 
     return render_template('index.html')
 
+
 @app.route('/api/v1.0/<age>/<salary>/<dependents>/<creditLine>/<creditLimit>/<realEstate>/<monthlySpend>/<totalDebt>/<overdue>')
-def getResult():
+def getResult(age,salary,dependents,creditLine,creditLimit,realEstate,monthlySpend,totalDebt,overdue):
 
+    valueDict = {
+                    'age': int(age),
+                    'MonthlyIncome': (int(salary)/12),
+                    'NumberOfDependents': int(dependents),
+                    'NumberOfOpenCreditLinesAndLoans': int(creditLine),
+                    'RevolvingUtilizationOfUnsecuredLines': (int(totalDebt)/int(creditLimit)),
+                    'NumberRealEstateLoansOrLines': int(realEstate),
+                    'DebtRatio': (int(monthlySpend)/(int(salary)/12)),
+                    'NumTimesPastDue': int(overdue),
+                    'MonthlyCosts' : monthlySpend
+                }
 
+    print(valueDict)
+
+    result = makePredictions(valueDict)
 
     return jsonify(result)
 
