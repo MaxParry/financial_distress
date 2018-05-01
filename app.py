@@ -17,9 +17,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.externals import joblib
 from sklearn.datasets import make_regression
 
-from model.result import makePredictions
-from model.modelTuning import shapeItUp,add_incomeperdependent_column,add_indicator_column
-
+from processing.result import makePredictions
+# from processing.modelTuning import shapeItUp
 
 #################################################
 # Flask Setup
@@ -29,9 +28,15 @@ app = Flask(__name__)
 # Full dashboard
 @app.route('/')
 def index():
-    """Return the dashboard homepage."""
+    """Return the  homepage."""
 
     return render_template('index.html')
+
+@app.route('/about')
+def index():
+    """Return the about page."""
+
+    return render_template('about.html')
 
 
 @app.route('/api/v1.0/<age>/<salary>/<dependents>/<creditLine>/<creditLimit>/<realEstate>/<monthlySpend>/<totalDebt>/<overdue>')
@@ -46,7 +51,7 @@ def getResult(age,salary,dependents,creditLine,creditLimit,realEstate,monthlySpe
                     'NumberRealEstateLoansOrLines': int(realEstate),
                     'DebtRatio': (int(monthlySpend)/(int(salary)/12)),
                     'NumTimesPastDue': int(overdue),
-                    'MonthlyCosts' : monthlySpend
+                    'MonthlyCosts' : int(monthlySpend)
                 }
 
     print(valueDict)
