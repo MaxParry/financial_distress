@@ -11,6 +11,9 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
+        <!-- D3 -->
+        <script src="https://d3js.org/d3.v5.min.js"></script>
+
         <!-- My CSS -->
         <link rel="stylesheet" href="../static/styles/home.css">
 
@@ -52,24 +55,9 @@
                 <!-- <img src="../static/images/vet-yo-self.jpg" alt="" id="homeHeaderImg"> -->
             </div>
 
-
-
-            <!-- Age
-            Age
-            Salary
-            # of Dependents
-
-            # of Open Credit Lines & Loans
-            Total Credit Limit
-
-            # of Real Estate Lines & Loans
-            Monthly Spend
-
-            # of Times 30+ Days Overdue
-            Total Current Debt
-             -->
             <div class="container">
-                    <div class="">
+                <div id="formResults" class="row">
+                    <div id="inputForm" class="col-lg-8">
                         <form>
                             <div class="form-row">
                                 <div class="form-group col-md-3">
@@ -86,41 +74,50 @@
                                 </div>
                             </div>
                             <div class="form-row">
-                                <div class="form-group col-md-3">
-                                    <label for="inputOpenCredit"># of Open Credit Lines & Loans</label>
+                                <div class="form-group col-md-5">
+                                    <label for="inputOpenCredit"># of Open Credit Lines or Loans</label>
                                     <select id="inputOpenCredit" class="form-control"></select>
                                 </div>
-                                <div class="form-group col-md-6">
+                                <div class="form-group col-md-7">
                                     <label for="inputCreditLimit">Total Credit Limit</label>
                                     <select id="inputCreditLimit" class="form-control"></select>
                                 </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputOpenRE"># of Real Estate Lines & Loans</label>
-                                    <select id="inputOpenRE" class="form-control"></select>
-                                </div>
+
                             </div>
                             <div class="form-row">
                                 <div class="form-group col-md-5">
-                                    <label for="inputMonthySpend">Monthly Spend</label>
-                                    <select id="inputMonthySpend" class="form-control"></select>
+                                    <label for="inputOpenRE"># of Real Estate Lines & Loans</label>
+                                    <select id="inputOpenRE" class="form-control"></select>
                                 </div>
                                 <div class="form-group col-md-5">
-                                    <label for="inputDebt">Total Current Debt</label>
-                                    <select id="inputDebt" class="form-control"></select>
-                                </div>
-                                <div class="form-group col-md-2">
                                     <label for="inputOverdue">Times Overdue</label>
                                     <select id="inputOverdue" class="form-control"></select>
                                 </div>
                             </div>
-                            <div class="row">
-
+                            <div class="form-row">
+                                <div class="form-group col-md-6">
+                                    <label for="inputMonthySpend">Monthly Spend</label>
+                                    <select id="inputMonthySpend" class="form-control"></select>
+                                </div>
+                                <div class="form-group col-md-6">
+                                    <label for="inputDebt">Total Current Debt</label>
+                                    <select id="inputDebt" class="form-control"></select>
+                                </div>
                             </div>
-                            <button id="submit" type="button" class="btn btn-primary" onclick="submitButtonClick()">Check It!</button>
+                            <div class="row">
+                                <div class="buttonWrapper">
+                                    <button id="submit" type="button" class="btn btn-primary btn-styling" onclick="submitButtonClick()">Check It!</button>
+                                    <button id="submit" type="button" class="btn btn-primary btn-styling" onclick="resetButtonClick()">Reset It...</button>
+                                </div>
+                            </div>
+
                         </form>
                     </div>
-                </div>
+                    <div id="instructions" class="col-lg-4">
 
+                    </div>
+                </div>
+            </div>
         </div>
 
         <!--Footer-->
@@ -134,7 +131,6 @@
         <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
         <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
         <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
 
         <!-- JavaScript -->
         <script src="../static/js/form.js" type="text/javascript"></script>

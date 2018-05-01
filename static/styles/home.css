@@ -11,3 +11,25 @@
     width: 100%;
     height: auto;
 } */
+
+#formResults {
+    margin: 20px 0;
+}
+
+#inputForm {
+    border: 1px solid black;
+}
+
+#instructions {
+    border: 1px solid red;
+    padding-left: 10px;
+}
+
+div.buttonWrapper {
+    text-align:center;
+    margin: auto;
+}
+
+.btn-styling {
+    margin: 10px;
+}

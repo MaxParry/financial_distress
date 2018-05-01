@@ -13,7 +13,7 @@ var inputFields = [$ageInput,$salaryInput,$dependentsInput,$creditLineInput,$cre
 
 function renderDropdown(arr, $parent, type='default') {
     if (type == 'choose') {
-        $parent.innerHTML = '<option value="" selected disabled>Choose...</option>';
+        $parent.innerHTML = '<option value="null" selected disabled>Choose...</option>';
     };
 
     if (arr[0].length>1){
@@ -69,6 +69,7 @@ function createSteppedArr(instructions,start){
     return arr;
 }
 
+// Create money dropdowns
 function showMeTheMoney(numArr){
     var arr = [];
 
@@ -81,11 +82,13 @@ function showMeTheMoney(numArr){
     return arr;
 };
 
+// Zip money array with value array
 function zipIt(numArr,monArr){
     return numArr.map(function(e, i) {
       return [e, monArr[i]];
       });
 };
+
 
 function goMoney(instruct,$div) {
     var arr = createSteppedArr(instruct,1);
@@ -105,6 +108,8 @@ function submitButtonClick(){
     };
     console.log(query);
     var fullQuery = baseURL + apiBase + query
+
+    console.log(fullQuery);
 
     // Create a request variable and assign a new XMLHttpRequest object to it.
     var request = new XMLHttpRequest();
