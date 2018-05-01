@@ -36,7 +36,7 @@ def makePredictions(valueDict):
     predictions = {
         'rf_class': rf_class_prediction[0].item(),
         'gbm_class': gbm_class_prediction[0].item(),
-        'probability': findAvg(rf_probability_prediction[0][1].item(),gbm_probability_prediction[0][1].item())
+        'probability': findAvg(rf_probability_prediction[0][0].item(),gbm_probability_prediction[0][0].item())
     }
 
     return predictions
