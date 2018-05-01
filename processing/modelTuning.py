@@ -193,7 +193,7 @@ def shapeItUp(df,training=False):
         df = add_numtimespastdue_column(df)
 
     df = add_incomeperdependent_column(df)
-    df = add_indicator_column(df, 10000, 'MonthlyIncome', direction='above')
+    df = add_indicator_column(df, 1000th0, 'MonthlyIncome', direction='above')
     df = add_indicator_column(df, 5, 'NumTimesPastDue', direction='below')
     df = add_indicator_column(df, 21, 'age', direction='below')
     df = add_indicator_column(df, 65, 'age', direction='above')

@@ -28,9 +28,15 @@ app = Flask(__name__)
 # Full dashboard
 @app.route('/')
 def index():
-    """Return the dashboard homepage."""
+    """Return the  homepage."""
 
     return render_template('index.html')
+
+@app.route('/about')
+def index():
+    """Return the about page."""
+
+    return render_template('about.html')
 
 
 @app.route('/api/v1.0/<age>/<salary>/<dependents>/<creditLine>/<creditLimit>/<realEstate>/<monthlySpend>/<totalDebt>/<overdue>')
