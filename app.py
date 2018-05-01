@@ -17,9 +17,8 @@ from sklearn.preprocessing import StandardScaler
 from sklearn.externals import joblib
 from sklearn.datasets import make_regression
 
-from model.result import makePredictions
-from model.modelTuning import shapeItUp,add_incomeperdependent_column,add_indicator_column
-
+from processing.result import makePredictions
+# from processing.modelTuning import shapeItUp
 
 #################################################
 # Flask Setup
@@ -46,7 +45,7 @@ def getResult(age,salary,dependents,creditLine,creditLimit,realEstate,monthlySpe
                     'NumberRealEstateLoansOrLines': int(realEstate),
                     'DebtRatio': (int(monthlySpend)/(int(salary)/12)),
                     'NumTimesPastDue': int(overdue),
-                    'MonthlyCosts' : monthlySpend
+                    'MonthlyCosts' : int(monthlySpend)
                 }
 
     print(valueDict)
