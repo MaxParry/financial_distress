@@ -8,7 +8,7 @@ from sklearn.preprocessing import StandardScaler
 
 from flask import jsonify
 
-from processing.modelTuning import shapeItUp
+from processing.modelTuning import shapeItUp, add_incomeperdependent_column, add_indicator_column
 
 def makePredictions(valueDict):
 

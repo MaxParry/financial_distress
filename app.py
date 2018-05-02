@@ -18,7 +18,7 @@ from sklearn.externals import joblib
 from sklearn.datasets import make_regression
 
 from processing.result import makePredictions
-# from processing.modelTuning import shapeItUp
+from processing.modelTuning import shapeItUp, add_incomeperdependent_column, add_indicator_column
 
 #################################################
 # Flask Setup
