@@ -56,16 +56,16 @@
             </div>
 
             <div class="container">
-                <div class='row'>
-                    <div class='col'>
+                <div class=''>
+                    <div class=''>
                         <h1>About Us</h1>
                         <p>Deciding whether to secure a loan from a bank is a big decision. You need mo’ money, but will you get it? We help you figure it out.</p>
                     </div>
-                    <div class='col'>
+                    <div class=''>
                         <h2>How we do</h2>
                         <p>We took a dataset describing 150K loans. It gave info about the borrowers like age, monthly income, and number of dependents. It also told us if the borrower couldn’t pay back the loan within 2 years. We used this to build a model that predicts whether or not a bank will give you a loan.</p>
                     </div>
-                    <div class='col'>
+                    <div class=''>
                         <h3>The Down and Dirty</h3>
                         <p>Even the best machine learning models suffer if the data is riding dirty. You gotta make it fresh son.</p>
                         <p>Important note (we about to get technical): we evaluated our models based on AUC. Because loan defaults were so rare in the dataset, the model would have 93% accuracy if it always predicted ‘no default’.</p>
@@ -73,7 +73,7 @@
                         <p>Because of this class imbalance, we plotted an ROC curve and calculated AUC to assess model performance. This is the ROC curve of a logistic regression model, before cleaning:</p>
                         <img src='../static/images/ROC_1_lr_dropna_only.png'>
                     </div>
-                    <div class='col'>
+                    <div class=''>
                         <h3>Step 1: Null Values + Outliers</h3>
                         <ul>
                             <li>Dropping entire rows of data gives us less data to play wit</li>
@@ -81,14 +81,14 @@
                         </ul>
                         <img src='../static/images/ROC_2_lr_after_cleaning.png'>
                     </div>
-                    <div class='col'>
+                    <div class=''>
                         <h3>Step 2: Data Engineering</h3>
                         <ul>
                             <li>Tried to create new features based on common sense (using the info we already got). This is the ROC curve of a logistic regression model, after new features are added:</li>
                         </ul>
                         <img src='../static/images/ROC_3_lr_after_engineering.png'>
                     </div>
-                    <div class='col'>
+                    <div class=''>
                         <h3>Step 3: Multicollinearity (wat?!)</h3>
                         <ul>
                             <li>Checked to see if any of our features were too similar</li>
@@ -99,14 +99,14 @@
                         <p>Feature correlation heatmap after cleaning, engineering, and feature removal:</p>
                         <img src='../static/images/heatmap_2_after_cleaning_and_engineering.png'>
                     </div>
-                    <div class='col'>
+                    <div class=''>
                         <h3>Step 4: Standardize</h3>
                         <ul>
                             <li>Split the data so we had a training and testing set</li>
                             <li>Scale that data so we could push it through the model</li>
                         </ul>
                     </div>
-                    <div class='col'>
+                    <div class=''>
                         <h3>Step 5: Fit It</h3>
                         <ul>
                             <li>Tested a couple different models to see which had the best AUC score</li>
@@ -119,7 +119,7 @@
                         </ul>
                         <img src='../static/images/ROC_7_ens_after_tuning.png'>
                     </div>
-                    <div class='col'>
+                    <div class=''>
                         <h3>Step 6: Predict It</h3>
                         <ul>
                             <li>Use those two models to let you know if you qualify based on the info you provide</li>
