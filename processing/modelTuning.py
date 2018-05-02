@@ -154,32 +154,21 @@ def add_numtimespastdue_column(df):
 
 # ### Function to write indicator variable columns:
 # define function to label rows with high monthly income with a 1 (in a new column)
-def add_indicator_column(dataframe, threshold, column_name, direction='above'):
-    dataframe_copy = dataframe.copy()
-    labels = []
-    if direction == 'above':
-        for index, row in dataframe_copy.iterrows():
-            value = row[column_name]
-            if value >= threshold:
-                labels.append(float(1))
-            elif value < threshold:
-                labels.append(float(0))
-            else:
-                print('Error in add_indicator_column(): Base case reached')
-    elif direction == 'below':
-        for index, row in dataframe_copy.iterrows():
-            value = row[column_name]
-            if value <= threshold:
-                labels.append(float(1))
-            elif value > threshold:
-                labels.append(float(0))
-            else:
-                print('Error in add_indicator_column(): Base case reached')
-    if len(dataframe_copy) == len(labels):
-        dataframe_copy[(str(column_name) + '_' + str(direction) + str(threshold))] = pd.Series(labels)
+def add_indicator_column(df, threshold, column_name, direction='above'):
+    newColName = (str(column_name) + '_' + str(direction) + str(threshold))
+
+    if direction == 'below':
+        try:
+            df[newColName] = np.where(df[column_name]<=threshold,float(1),float(0))
+        except:
+            print('Error in add_indicator_column(): Base case reached')
     else:
-        print('Error in add_indicator_column(): Missing labels')
-    return dataframe_copy
+        try:
+            df[newColName] = np.where(df[column_name]>=threshold,float(1),float(0))
+        except:
+                print('Error in add_indicator_column(): Base case reached')
+
+    return df
 
 # #FEATURE ENGINEERING
 # Run add / remove all columns
@@ -332,9 +321,9 @@ gbm_fpr_testing, gbm_tpr_testing, gbm_thresholds_testing = roc_curve(y_test, gbm
 ensemble_predictions = (rf_probability_predictions_testing + gbm_probability_predictions_testing) / 2
 ensemble_predictions
 
-# Save out models
-joblib.dump(rf_model, 'model/rf_model_v1.pkl')
-joblib.dump(gbm_model, 'model/gbm_model_v1.pkl')
-
-# also pickle fitted scaler:
-joblib.dump(X_scaler, 'model/fitted_X_scaler_v1.pkl')
+# # Save out models
+# joblib.dump(rf_model, 'model/rf_model_v1.pkl')
+# joblib.dump(gbm_model, 'model/gbm_model_v1.pkl')
+#
+# # also pickle fitted scaler:
+# joblib.dump(X_scaler, 'model/fitted_X_scaler_v1.pkl')
