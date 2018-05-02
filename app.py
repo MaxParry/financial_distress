@@ -38,6 +38,11 @@ def about():
 
     return render_template('about.html')
 
+@app.route('/accreditation')
+def accreditation():
+    """Return the about page."""
+
+    return render_template('accreditation.html')
 
 @app.route('/api/v1.0/<age>/<salary>/<dependents>/<creditLine>/<creditLimit>/<realEstate>/<monthlySpend>/<totalDebt>/<overdue>')
 def getResult(age,salary,dependents,creditLine,creditLimit,realEstate,monthlySpend,totalDebt,overdue):
