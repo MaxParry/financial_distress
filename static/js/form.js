@@ -195,14 +195,23 @@ function submitButtonClick(){
     };
 };
 
+function showResult2(proba) {
+    var $resultBox = document.getElementById('resultsInner');
+    $resultBox.innerHTML = '{% include "goodToGo.html" %}';
+
+};
+
 function showResult(proba) {
 
     var $resultBox = document.getElementById('resultsInner');
     $resultBox.innerHTML = '';
 
-    var resultHeader = document.createElement('div');
-    resultHeader.innerText = 'Results'
-    resultHeader.setAttribute('id','resultHeader')
+    var $resultHeader = document.createElement('div');
+    $resultHeader.innerText = 'Chance you get a loan:'
+    $resultHeader.setAttribute('id','resultHeader')
+
+    var $resultBody = document.createElement('div');
+    $resultBody.setAttribute('class','readibleFont');
 
     var resultProb = document.createElement('div');
     resultProb.setAttribute('id','resultProb');
@@ -212,27 +221,39 @@ function showResult(proba) {
     resultImg.setAttribute('id','resultImg')
     var resultDesc = document.createElement('p');
 
+    var reccos = document.getElementById('recommendations');
+    reccos.style.display = 'block';
+    var reccoKids = reccos.childNodes
+    for(var i=0; i<reccoKids; i++) {
+        reccoKids[i].style.display = 'none';
+    }
+
+
     if (proba>=.75) {
-        resultProb.setAttribute('class','alert alert-success');
+        resultProb.setAttribute('class','resultPercent success');
         resultProb.setAttribute('role','alert');
         resultImg.setAttribute('src','../static/images/cheque-yo-self.png')
-        resultDesc.innerText = 'Your stats look good. You should be good to go if you apply for a loan!';
+        var rec = document.getElementById('goodToGo');
+        rec.style.display = 'block';
     } else if (proba>=.6) {
-        resultProb.setAttribute('class','alert alert-warning');
+        resultProb.setAttribute('class','resultPercent warning');
         resultProb.setAttribute('role','alert');
         resultImg.setAttribute('src','../static/images/recheck-yo-self.png')
-        resultDesc.innerText = 'We see that your financial future is a tad bit troubling...decreasing your existing debt and increasing your overall credit limit should help.';
+        var rec = document.getElementById('callMeMaybe');
+        rec.style.display = 'block';
     } else {
-        resultProb.setAttribute('class','alert alert-danger');
+        resultProb.setAttribute('class','resultPercent danger');
         resultProb.setAttribute('role','alert');
         resultImg.setAttribute('src','../static/images/wreck-yo-self.png')
-        resultDesc.innerText = 'Bro...what you been up to? You gotta hide yo kids, hide yo wife. Rebuild that credit son.';
+        var rec = document.getElementById('hellNo');
+        rec.style.display = 'block';
     };
 
-    $resultBox.appendChild(resultHeader);
-    $resultBox.appendChild(resultProb);
-    $resultBox.appendChild(resultImg);
-    $resultBox.appendChild(resultDesc);
+    $resultBody.appendChild(resultProb);
+    $resultBody.appendChild(resultImg);
+
+    $resultBox.appendChild($resultHeader);
+    $resultBox.appendChild($resultBody);
 };
 
 // <div class="alert alert-success" role="alert">

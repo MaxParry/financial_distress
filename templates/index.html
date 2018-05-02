@@ -11,9 +11,6 @@
         <!-- Bootstrap CSS -->
         <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
 
-        <!-- D3 -->
-        <script src="https://d3js.org/d3.v5.min.js"></script>
-
         <!-- My CSS -->
         <link rel="stylesheet" href="../static/styles/home.css">
         <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Rancho|Ropa+Sans" rel="stylesheet">
@@ -22,113 +19,93 @@
     </head>
 
     <body>
-        <!-- navbar -->
-        <!-- {% include 'header.html' %} -->
-        <div class="header bg-black">
-            <div id="headerNavbar" class="container">
-                <nav class="navbar navbar-expand-lg navbar-dark bg-black">
-                    <div id="logoLockup">
-                        <a class="navbar-brand" href="#">
-                            <div id="logo">LoanVet</div>
-                            <div id="tagline">are YOU qualified?</div>
-                        </a>
-                    </div>
-                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarText">
-                        <ul class="navbar-nav mr-auto">
-                            <li class="nav-item active">
-                                <a class="nav-link" href="#">Vet Yo Self</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Check Yo Method</a>
-                            </li>
-                        </ul>
-                    </div>
-                </nav>
-            </div>
-        </div>
+        <div class="pageContainer">
+            <!-- navbar -->
+            {% include 'header.html' %}
 
-        <!--Body-->
-        <div class="bodyInfo">
-            <div class="container">
-                <div id="homeHeader">Vet Yo Self!</div>
-                <div id="homeDescription">
-                    Need a loan? Don't know if you qualify? Don't want to be laughed out a bank? We help you find out!
-                    <br />
-                    Enter a couple deets below and find out if you'll be approved for a loan right from your couch.
-                </div>
-                <div id="formResults" class="row">
-                    <div id="inputForm" class="col-lg-8">
-                        <form>
-                            <div class="form-row">
-                                <div class="form-group col-md-3">
-                                    <label for="inputAge">Age</label>
-                                    <select id="inputAge" class="form-control"></select>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputSalary">Salary</label>
-                                    <select id="inputSalary" class="form-control"></select>
-                                </div>
-                                <div class="form-group col-md-3">
-                                    <label for="inputDependents">Dependents</label>
-                                    <select id="inputDependents" class="form-control"></select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-5">
-                                    <label for="inputOpenCredit"># of Open Credit Lines or Loans</label>
-                                    <select id="inputOpenCredit" class="form-control"></select>
-                                </div>
-                                <div class="form-group col-md-7">
-                                    <label for="inputCreditLimit">Total Credit Limit</label>
-                                    <select id="inputCreditLimit" class="form-control"></select>
-                                </div>
-
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-5">
-                                    <label for="inputOpenRE"># of Real Estate Lines & Loans</label>
-                                    <select id="inputOpenRE" class="form-control"></select>
-                                </div>
-                                <div class="form-group col-md-5">
-                                    <label for="inputOverdue">Times Overdue</label>
-                                    <select id="inputOverdue" class="form-control"></select>
-                                </div>
-                            </div>
-                            <div class="form-row">
-                                <div class="form-group col-md-6">
-                                    <label for="inputMonthySpend">Monthly Spend</label>
-                                    <select id="inputMonthySpend" class="form-control"></select>
-                                </div>
-                                <div class="form-group col-md-6">
-                                    <label for="inputDebt">Total Current Debt</label>
-                                    <select id="inputDebt" class="form-control"></select>
-                                </div>
-                            </div>
-                            <div class="row">
-                                <div class="buttonWrapper">
-                                    <button id="submit" type="button" class="btn btn-primary btn-styling" onclick="submitButtonClick()">Check It!</button>
-                                </div>
-                            </div>
-
-                        </form>
+            <!--Body-->
+            <div class="bodyInfo">
+                <div class="container">
+                    <div id="homeHeader"><h1>Vet Yo Self!</h1></div>
+                    <div id="homeDescription">
+                        Need a loan? Don't know if you qualify? Don't want to be laughed out a bank? We help you find out!
+                        <br />
+                        Enter a couple deets below and find out if you'll be approved for a loan right from your couch.
                     </div>
-                    <div id="results" class="col-lg-4">
-                        <div id="resultsInner">
-                            <h2>Fill out the form and...</h2>
-                            <img src="../static/images/vet-yo-self.png" alt="" id="defaultImage">
+                    <div id="formResults" class="row">
+                        <div id="inputForm" class="col-lg-8">
+                            <form>
+                                <div class="form-row">
+                                    <div class="form-group col-md-3">
+                                        <label for="inputAge">Age</label>
+                                        <select id="inputAge" class="form-control"></select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputSalary">Salary</label>
+                                        <select id="inputSalary" class="form-control"></select>
+                                    </div>
+                                    <div class="form-group col-md-3">
+                                        <label for="inputDependents">Dependents</label>
+                                        <select id="inputDependents" class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-5">
+                                        <label for="inputOpenCredit"># of Open Credit Lines or Loans</label>
+                                        <select id="inputOpenCredit" class="form-control"></select>
+                                    </div>
+                                    <div class="form-group col-md-7">
+                                        <label for="inputCreditLimit">Total Credit Limit</label>
+                                        <select id="inputCreditLimit" class="form-control"></select>
+                                    </div>
+
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-5">
+                                        <label for="inputOpenRE"># of Real Estate Lines & Loans</label>
+                                        <select id="inputOpenRE" class="form-control"></select>
+                                    </div>
+                                    <div class="form-group col-md-5">
+                                        <label for="inputOverdue">Times Overdue</label>
+                                        <select id="inputOverdue" class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="form-row">
+                                    <div class="form-group col-md-6">
+                                        <label for="inputMonthySpend">Monthly Spend</label>
+                                        <select id="inputMonthySpend" class="form-control"></select>
+                                    </div>
+                                    <div class="form-group col-md-6">
+                                        <label for="inputDebt">Total Current Debt</label>
+                                        <select id="inputDebt" class="form-control"></select>
+                                    </div>
+                                </div>
+                                <div class="row">
+                                    <div class="buttonWrapper">
+                                        <button id="submit" type="button" class="btn btn-primary btn-styling" onclick="submitButtonClick()">Check It!</button>
+                                    </div>
+                                </div>
+
+                            </form>
+                        </div>
+                        <div id="results" class="col-lg-4">
+                            <div id="resultsInner">
+                                <h2 id="defaultText">Fill out the form and...</h2>
+                                <img src="../static/images/vet-yo-self.png" alt="" id="defaultImage">
+                            </div>
                         </div>
                     </div>
+                    <div id="recommendations">
+                        <h3>Recommendations</h3>
+                        <div id="goodToGo">{% include 'goodToGo.html' %}</div>
+                        <div id="callMeMaybe">{% include 'callMeMaybe.html' %}</div>
+                        <div id="hellNo">{% include 'hellNo.html' %}</div>
+                    </div>
                 </div>
             </div>
-        </div>
 
-        <!--Footer-->
-        <!-- {% include 'footer.html' %} -->
-        <div id="footer" class="bg-black">
-            &copy;TeaMeetsIce
+            <!--Footer-->
+            {% include 'footer.html' %}
         </div>
 
         <!-- Optional JavaScript -->
