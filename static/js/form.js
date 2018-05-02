@@ -89,7 +89,7 @@ function zipIt(numArr,monArr){
       });
 };
 
-
+// insert money options
 function goMoney(instruct,$div) {
     var arr = createSteppedArr(instruct,1);
     var styledArr = showMeTheMoney(arr);
@@ -97,32 +97,175 @@ function goMoney(instruct,$div) {
     renderDropdown(zippedArr,$div,'choose');
 };
 
+// Check if all fields are filled
+function fieldsNull() {
+    var nulls = [];
+    //add null fields to array
+    for (var i=0; i<inputFields.length; i++) {
+        if (inputFields[i].value == 'null') {
+            nulls.push(inputFields[i]);
+        };
+    };
+    if (nulls.length>0){
+        return nulls;
+    } else {
+        return false;
+    };
+};
+
+// add styling
+function addIncompleteFieldStyle(nullFields){
+    for (var i=0; i<nullFields.length; i++){
+        var elem = nullFields[i];
+        var par = elem.parentElement;
+        par.setAttribute('style', 'border: 1px solid #B82601; border-radius: 5px;')
+    };
+
+    resetPar = document.getElementById('submit').parentElement;
+    console.log(resetPar);
+
+
+    var warningDiv = document.createElement('div')
+    warningDiv.setAttribute('id','warningDiv');
+    warningDiv.setAttribute('class','row');
+
+    var warning = document.createElement('div')
+    warning.setAttribute('class','alert alert-danger');
+    warning.setAttribute('role','alert');
+    warning.innerText = "You missed some fields - fill em' in";
+
+    warningDiv.appendChild(warning);
+    resetPar.appendChild(warningDiv);
+    console.log(warningDiv);
+};
+
+// remove styling
+function removeIncompleteFieldStyle(){
+    for (var i=0; i<inputFields.length; i++){
+        var parent = inputFields[i].parentElement;
+        parent.removeAttribute('style');
+    };
+
+    try {
+        var warningDiv = document.getElementById('warningDiv')
+        warningDiv.outerHTML = "";
+    } catch (e) {
+        console.log(e);
+    };
+};
+
 function submitButtonClick(){
 
     var baseURL = 'http://127.0.0.1:5000/';
     var apiBase = 'api/v1.0';
-    var query = '';
-    for (var i=0; i<inputFields.length; i++) {
-        var value = inputFields[i].value;
-        query = query + '/' + value;
+
+    var nullFields = fieldsNull();
+
+    // if there are null fields
+    if (nullFields.length>0) {
+        console.log(nullFields.length);
+        removeIncompleteFieldStyle();
+        addIncompleteFieldStyle(nullFields);
+
+        var container = document.getElementById('inputForm');
+    } else { // otherwise find results
+        removeIncompleteFieldStyle()
+
+        // create query string by appending all field values to url
+        var query = '';
+        for (var i=0; i<inputFields.length; i++) {
+            var value = inputFields[i].value;
+            query = query + '/' + value;
+
+        };
+        var fullQuery = baseURL + apiBase + query
+
+        // Create a request variable and assign a new XMLHttpRequest object to it.
+        var request = new XMLHttpRequest();
+        // Open a new connection, using the GET request on the URL endpoint
+        request.open('GET', fullQuery, true);
+
+        request.onload = function () {
+            var data = JSON.parse(this.response);
+            console.log(data.probability);
+            showResult(data.probability);
+            }
+        // Send request
+        request.send();
     };
-    console.log(query);
-    var fullQuery = baseURL + apiBase + query
+};
 
-    console.log(fullQuery);
+function showResult2(proba) {
+    var $resultBox = document.getElementById('resultsInner');
+    $resultBox.innerHTML = '{% include "goodToGo.html" %}';
 
-    // Create a request variable and assign a new XMLHttpRequest object to it.
-    var request = new XMLHttpRequest();
-    // Open a new connection, using the GET request on the URL endpoint
-    request.open('GET', fullQuery, true);
+};
 
-    request.onload = function () {
-        var data = JSON.parse(this.response);
-        console.log(data);
-        }
-    // Send request
-    request.send();
+function showResult(proba) {
 
+    var $resultBox = document.getElementById('resultsInner');
+    $resultBox.innerHTML = '';
+
+    var $resultHeader = document.createElement('div');
+    $resultHeader.innerText = 'Chance you get a loan:'
+    $resultHeader.setAttribute('id','resultHeader')
+
+    var $resultBody = document.createElement('div');
+    $resultBody.setAttribute('class','readibleFont');
+
+    var resultProb = document.createElement('div');
+    resultProb.setAttribute('id','resultProb');
+    resultProb.innerText = (proba*100).toFixed(2) + '%';
+
+    var resultImg = document.createElement('img');
+    resultImg.setAttribute('id','resultImg')
+    var resultDesc = document.createElement('p');
+
+    var reccos = document.getElementById('recommendations');
+    reccos.style.display = 'block';
+    var reccoKids = reccos.childNodes
+    for(var i=0; i<reccoKids; i++) {
+        reccoKids[i].style.display = 'none';
+    }
+
+
+    if (proba>=.75) {
+        resultProb.setAttribute('class','resultPercent success');
+        resultProb.setAttribute('role','alert');
+        resultImg.setAttribute('src','../static/images/cheque-yo-self.png')
+        var rec = document.getElementById('goodToGo');
+        rec.style.display = 'block';
+    } else if (proba>=.6) {
+        resultProb.setAttribute('class','resultPercent warning');
+        resultProb.setAttribute('role','alert');
+        resultImg.setAttribute('src','../static/images/recheck-yo-self.png')
+        var rec = document.getElementById('callMeMaybe');
+        rec.style.display = 'block';
+    } else {
+        resultProb.setAttribute('class','resultPercent danger');
+        resultProb.setAttribute('role','alert');
+        resultImg.setAttribute('src','../static/images/wreck-yo-self.png')
+        var rec = document.getElementById('hellNo');
+        rec.style.display = 'block';
+    };
+
+    $resultBody.appendChild(resultProb);
+    $resultBody.appendChild(resultImg);
+
+    $resultBox.appendChild($resultHeader);
+    $resultBox.appendChild($resultBody);
+};
+
+// <div class="alert alert-success" role="alert">
+// <div class="alert alert-danger" role="alert">
+// <div class="alert alert-warning" role="alert">
+
+function showRecommendations(){
+    var container = document.getElementById('formResults').parentElement;
+    var recos = document.createElement('div')
+    recos.setAttribute('id','recommendations');
+
+    container.appendChild(recos);
 };
 
 // AGE DROPDOWN

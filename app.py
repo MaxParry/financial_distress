@@ -33,7 +33,7 @@ def index():
     return render_template('index.html')
 
 @app.route('/about')
-def index():
+def about():
     """Return the about page."""
 
     return render_template('about.html')
