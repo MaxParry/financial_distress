@@ -241,3 +241,52 @@ div.buttonWrapper {
 #wuTangVid {
     text-align: center;
 }
+
+h1 {
+    
+}
+
+.rocImg {
+    width: 100%;
+    margin-bottom: 15px;
+}
+
+.heatImg {
+    width: 100%;
+    margin-bottom: 30px;
+    margin-left: 28px;
+}
+
+.finalImg {
+    border: 5px solid rgb(42, 182, 53);
+}
+
+.majHead {
+    text-align: center;
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 38px;
+    color: #062F4F;
+    margin-top: 30px;
+    margin-bottom: 20px;
+}
+
+.minHead {
+    text-align: center;
+    font-family: 'Rancho', cursive;
+    font-size: 40px;
+    color: #062F4F;
+    margin-top: 33px;
+}
+
+
+.centerMe {
+    text-align: center;
+    vertical-align: center;
+}
+
+.vertCenter {
+    /*margin-top: 50%;*/
+    position: relative;
+    top:50%;
+    transform: translateY(-50%);
+}
