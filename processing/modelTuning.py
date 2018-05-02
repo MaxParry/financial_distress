@@ -5,10 +5,8 @@
 #     - Goal is to predict default risk on holdout set
 
 # Import dependencies
-import matplotlib.pyplot as plt
 import numpy as np
 import pandas as pd
-
 
 from sklearn.datasets import make_regression
 from sklearn.model_selection import train_test_split
@@ -19,8 +17,6 @@ from sklearn.metrics import roc_curve, roc_auc_score
 from sklearn.externals import joblib
 
 from collections import Counter
-
-import seaborn as sns
 
 # Read CSV
 #df = pd.read_csv('../data/cs-test.csv')
