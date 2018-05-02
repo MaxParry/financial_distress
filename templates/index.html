@@ -16,46 +16,47 @@
 
         <!-- My CSS -->
         <link rel="stylesheet" href="../static/styles/home.css">
+        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Rancho|Ropa+Sans" rel="stylesheet">
 
 
     </head>
 
     <body>
         <!-- navbar -->
-        <div class="header">
-            <!-- {% include 'header.html' %} -->
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <a class="navbar-brand" href="#">
-                    <div id="logo">
-                        LoanVet
+        <!-- {% include 'header.html' %} -->
+        <div class="header bg-black">
+            <div id="headerNavbar" class="container">
+                <nav class="navbar navbar-expand-lg navbar-dark bg-black">
+                    <div id="logoLockup">
+                        <a class="navbar-brand" href="#">
+                            <div id="logo">LoanVet</div>
+                            <div id="tagline">are YOU qualified?</div>
+                        </a>
                     </div>
-                    <div class="tagline">
-                        are YOU qualified?
+                    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
+                        <span class="navbar-toggler-icon"></span>
+                    </button>
+                    <div class="collapse navbar-collapse" id="navbarText">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                                <a class="nav-link" href="#">Vet Yo Self</a>
+                            </li>
+                            <li class="nav-item">
+                                <a class="nav-link" href="#">Check Yo Method</a>
+                            </li>
+                        </ul>
                     </div>
-                </a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item active">
-                            <a class="nav-link" href="#">Vet Yo Self</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#">Check Yo Method</a>
-                        </li>
-                    </ul>
-                </div>
-            </nav>
+                </nav>
+            </div>
         </div>
 
         <!--Body-->
-        <div class="">
-            <div id="homeHeader" style="background-image:url(../static/images/vet-yo-self.jpg)">
-                <!-- <img src="../static/images/vet-yo-self.jpg" alt="" id="homeHeaderImg"> -->
-            </div>
-
+        <div class="bodyInfo">
             <div class="container">
+                <div id="homeHeader">Vet Yo Self!</div>
+                <div id="homeDescription">
+                    Need a loan? Don't know if you qualify? Don't want to be laughed out a bank? We help you find out. Enter a couple deets below and find out if you'll be approved for a loan right from your couch.
+                </div>
                 <div id="formResults" class="row">
                     <div id="inputForm" class="col-lg-8">
                         <form>
@@ -107,23 +108,25 @@
                             <div class="row">
                                 <div class="buttonWrapper">
                                     <button id="submit" type="button" class="btn btn-primary btn-styling" onclick="submitButtonClick()">Check It!</button>
-                                    <button id="submit" type="button" class="btn btn-primary btn-styling" onclick="resetButtonClick()">Reset It...</button>
                                 </div>
                             </div>
 
                         </form>
                     </div>
-                    <div id="instructions" class="col-lg-4">
-
+                    <div id="results" class="col-lg-4">
+                        <div id="resultsInner">
+                            <h2>Fill out the form and...</h2>
+                            <img src="../static/images/vet-yo-self.png" alt="" id="defaultImage">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
 
         <!--Footer-->
-        <div class="footer">
-            <!-- {% include 'footer.html' %} -->
-
+        <!-- {% include 'footer.html' %} -->
+        <div id="footer" class="bg-black">
+            &copy;TeaMeetsIce
         </div>
 
         <!-- Optional JavaScript -->
