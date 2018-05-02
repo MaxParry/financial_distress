@@ -1,15 +1,15 @@
 /*
+color:
 #000 black
 #062F4F ink
 #813772 posy
 #B82601 embers
 
+font-family:
 'Alfa Slab One', cursive;
 'Rancho', cursive;
 'Ropa Sans', sans-serif
 */
-
-
 
 .pageContainer {
     min-height: 100vh; /* will cover the 100% of viewport */
@@ -33,7 +33,7 @@
     color: #FFF;
 }
 
-#homeHeader {
+.homeHeader {
     width: 100%;
     margin: 20px 0px;
     text-align: center;
@@ -64,10 +64,6 @@
     text-align: right;
 }
 
-/* .bodyInfo {
-    font-style: 'Ropa Sans', sans-serif;
-} */
-
 #homeDescription {
     text-align: center;
     font-size: 21px;
@@ -94,6 +90,10 @@ select {
 /* #warningIncompleteForm{
     padding: 5px;
 } */
+button#submit {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 18px;
+}
 
 div.buttonWrapper {
     text-align:center;
@@ -129,10 +129,6 @@ div.buttonWrapper {
     position: relative;
 }
 
-#results p {
-    font-style: 'Ropa Sans', sans-serif;
-}
-
 #resultsInner {
     text-align: center;
     position: relative;
@@ -151,7 +147,7 @@ div.buttonWrapper {
 .resultPercent {
     width: 50%;
     margin: auto;
-    font-style: 'Alfa Slab One', cursive !important;
+    font-family: 'Alfa Slab One', cursive;
     font-size: 25px;
     position: relative;
     padding: .75rem 1.25rem;
@@ -184,16 +180,47 @@ div.buttonWrapper {
 }
 
 #recommendations {
-    display:none;
-    margin-top: 10px;
+    display: none;
+    padding: 15px 20px;
+    background-color: #F2F2F2;
+    border: 1px dashed #B82601;
+    font-family: 'Ropa Sans', sans-serif;
+}
 
+#recommendations p {
+    margin-bottom: 5px;
+    font-size: 18px;
+}
+
+#recommendations h3 {
+    font-family: 'Alfa Slab One', cursive;
+    font-size: 28px;
+    color: #062F4F;
 }
 
 #recommendations h4 {
-
+    text-align: center;
+    text-decoration: underline;
+    color: #B82601;
+    font-family: 'Rancho', cursive;
+    font-size: 30px;
 }
-#recommendations h5 {
 
+#recommendations h5 {
+    margin-top: 20px;
+    margin-bottom: 5px;
+}
+
+#goodToGo {
+    display: none;
+}
+
+#callMeMaybe {
+    display: none;
+}
+
+#hellNo {
+    display: none;
 }
 
 #footer {
@@ -207,8 +234,10 @@ div.buttonWrapper {
     height:60px;   /* Height of the footer */
 }
 
+.centeredH {
+    text-align: center;
+}
 
-
-#wuTang {
+#wuTangVid {
     text-align: center;
 }
