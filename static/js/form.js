@@ -256,18 +256,6 @@ function showResult(proba) {
     $resultBox.appendChild($resultBody);
 };
 
-// <div class="alert alert-success" role="alert">
-// <div class="alert alert-danger" role="alert">
-// <div class="alert alert-warning" role="alert">
-
-function showRecommendations(){
-    var container = document.getElementById('formResults').parentElement;
-    var recos = document.createElement('div')
-    recos.setAttribute('id','recommendations');
-
-    container.appendChild(recos);
-};
-
 // AGE DROPDOWN
 var ageArr = createConsecutiveArr(21,95);
 renderDropdown(ageArr,$ageInput,'choose');

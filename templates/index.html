@@ -3,30 +3,19 @@
 <html lang='en'>
     <head>
         <title>Homepage</title>
-
-        <!-- Required meta tags -->
-        <meta charset="utf-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-
-        <!-- Bootstrap CSS -->
-        <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
-
-        <!-- My CSS -->
-        <link rel="stylesheet" href="../static/styles/home.css">
-        <link href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Rancho|Ropa+Sans" rel="stylesheet">
-
+        {% include 'blocks/headTags.html' %}
 
     </head>
 
     <body>
         <div class="pageContainer">
             <!-- navbar -->
-            {% include 'header.html' %}
+            {% include 'blocks/header.html' %}
 
             <!--Body-->
             <div class="bodyInfo">
                 <div class="container">
-                    <div id="homeHeader"><h1>Vet Yo Self!</h1></div>
+                    <div class="homeHeader"><h1>Vet Yo Self!</h1></div>
                     <div id="homeDescription">
                         Need a loan? Don't know if you qualify? Don't want to be laughed out a bank? We help you find out!
                         <br />
@@ -95,27 +84,20 @@
                             </div>
                         </div>
                     </div>
-                    <div id="recommendations">
-                        <h3>Recommendations</h3>
-                        <div id="goodToGo">{% include 'goodToGo.html' %}</div>
-                        <div id="callMeMaybe">{% include 'callMeMaybe.html' %}</div>
-                        <div id="hellNo">{% include 'hellNo.html' %}</div>
+                    <div id="recommendations" class="row">
+                        <h3 class="centeredH">Recommendations</h3>
+                        <div id="goodToGo">{% include 'blocks/goodToGo.html' %}</div>
+                        <div id="callMeMaybe">{% include 'blocks/callMeMaybe.html' %}</div>
+                        <div id="hellNo">{% include 'blocks/hellNo.html' %}</div>
                     </div>
                 </div>
             </div>
 
             <!--Footer-->
-            {% include 'footer.html' %}
+            {% include 'blocks/footer.html' %}
         </div>
 
-        <!-- Optional JavaScript -->
-        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
-        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-
-        <!-- JavaScript -->
-        <script src="../static/js/form.js" type="text/javascript"></script>
+        {% include 'blocks/bodyTags.html' %}
 
     </body>
 </html>
