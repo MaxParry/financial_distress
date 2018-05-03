@@ -156,7 +156,7 @@ function removeIncompleteFieldStyle(){
 
 function submitButtonClick(){
 
-    var baseURL = 'http://127.0.0.1:5000/';
+    var baseURL = 'https://tea-meets-ice.herokuapp.com/';
     var apiBase = 'api/v1.0';
 
     var nullFields = fieldsNull();
