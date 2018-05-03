@@ -56,18 +56,21 @@
                     </div>
                 </div>
                 <div class='row'>
-                    <div class='col-md-6'>
+                    <div class='col-lg-6'>
                         <h3 class='minHead'>Step 1: Null Values + Outliers</h3>
                         <ul>
                             <li>Dropping entire rows of data gives us less data to play wit</li>
-                            <li>Instead we replaced that data using averages or medians (for income, we averaged by age). This is the ROC curve of a logistic regression model, after cleaning:</li>
+                            <li>Instead we replaced that data using averages or medians (for income, we averaged by age).</li>
+                            <li>This is the ROC curve of a logistic regression model, after cleaning:</li>
                             <img class='rocImg' src='../static/images/ROC_2_lr_after_cleaning.png'>
                         </ul>
                     </div>
-                    <div class='col-md-6'>
+                    <div class='col-lg-6'>
                         <h3 class='minHead'>Step 2: Data Engineering</h3>
                         <ul>
-                            <li>Tried to create new features based on common sense (using the info we already got). This is the ROC curve of a logistic regression model, after new features are added:</li>
+                            <li>Tried to create new features based on common sense (using the info we already got).</li>
+                            <li>Played around with creating features by assuming importance.</li>
+                            <li>This is the ROC curve of a logistic regression model, after cleaning:</li>
                             <img class='rocImg' src='../static/images/ROC_3_lr_after_engineering.png'>
                         </ul>
                     </div>
