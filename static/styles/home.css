@@ -234,16 +234,12 @@ div.buttonWrapper {
     height:60px;   /* Height of the footer */
 }
 
-.centeredH {
+#wuTangTitle {
     text-align: center;
 }
 
 #wuTangVid {
     text-align: center;
-}
-
-h1 {
-
 }
 
 .rocImg {
@@ -258,7 +254,7 @@ h1 {
 }
 
 .finalImg {
-    border: 5px solid rgb(42, 182, 53);
+    border: 5px solid #813772;
 }
 
 .majHead {
@@ -277,19 +273,6 @@ h1 {
     font-size: 35px;
     color: #062F4F;
     margin-top: 33px;
-}
-
-
-.centerMe {
-    text-align: center;
-    vertical-align: center;
-}
-
-.vertCenter {
-    /*margin-top: 50%;*/
-    position: relative;
-    top:50%;
-    transform: translateY(-50%);
 }
 
 p {
