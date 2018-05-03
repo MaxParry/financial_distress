@@ -84,6 +84,7 @@ select {
     border-radius: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 20px;
     font-family: 'Ropa Sans', sans-serif;
 }
 
@@ -132,7 +133,7 @@ div.buttonWrapper {
 #resultsInner {
     text-align: center;
     position: relative;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
 }
 
@@ -234,16 +235,12 @@ div.buttonWrapper {
     height:60px;   /* Height of the footer */
 }
 
-.centeredH {
+#wuTangTitle {
     text-align: center;
 }
 
 #wuTangVid {
     text-align: center;
-}
-
-h1 {
-    
 }
 
 .rocImg {
@@ -258,35 +255,34 @@ h1 {
 }
 
 .finalImg {
-    border: 5px solid rgb(42, 182, 53);
+    border: 5px solid #813772;
 }
 
 .majHead {
-    text-align: center;
-    font-family: 'Alfa Slab One', cursive;
-    font-size: 38px;
+    text-align: left;
+    font-family: 'Rancho', cursive;
+    font-size: 50px;
     color: #062F4F;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
+    margin-bottom: 10px;
 }
 
 .minHead {
-    text-align: center;
-    font-family: 'Rancho', cursive;
-    font-size: 40px;
+    text-align: left;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 35px;
     color: #062F4F;
     margin-top: 33px;
 }
 
-
-.centerMe {
-    text-align: center;
-    vertical-align: center;
+p {
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 18px;
 }
 
-.vertCenter {
-    /*margin-top: 50%;*/
-    position: relative;
-    top:50%;
-    transform: translateY(-50%);
+li {
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 18px;
+    padding-left: 15px;
 }

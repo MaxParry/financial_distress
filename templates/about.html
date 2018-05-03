@@ -13,158 +13,121 @@
             {% include 'blocks/header.html' %}
 
             <!--Body-->
-            <div class="">
-                <div id="homeHeader" style="background-image:url(../static/images/vet-yo-self.jpg)">
-                    <!-- <img src="../static/images/vet-yo-self.jpg" alt="" id="homeHeaderImg"> -->
+            <div class="container">
+                <div class='row'>
+                    <div class='col'>
+                        <div class='homeHeader'><h1>About Us</h1></div>
+                        <div id='homeDescription'>
+                            Deciding whether to secure a loan from a bank is a big decision.
+                            <br />
+                            You need mo’ money, but will you get it? We help you figure it out.
+                        </div>
+                    </div>
                 </div>
-
-                <div class="container">
-                    <div class='row'>
-                        <div class='col'>
-                            <div class='homeHeader'><h1>About Us</h1></div>
-                            <div id='homeDescription'>
-                                Deciding whether to secure a loan from a bank is a big decision. 
-                                <br />
-                                You need mo’ money, but will you get it? We help you figure it out.
-                            </div>
-                        </div>
+                <div class='row'>
+                    <div class='col'>
+                        <h2 class='majHead'>How We Do</h2>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <h2 class='majHead'>How we do</h2>
-                        </div>
+                </div>
+                <div class='row'>
+                    <div class='col'>
+                        <p>We took a dataset describing 150K loans. It gave info about the borrowers like age, monthly income, and number of dependents. It also told us if the borrower couldn’t pay back the loan within 2 years. We used this to build a model that predicts whether or not a bank will give you a loan.</p>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <p>We took a dataset describing 150K loans. It gave info about the borrowers like age, monthly income, and number of dependents. It also told us if the borrower couldn’t pay back the loan within 2 years. We used this to build a model that predicts whether or not a bank will give you a loan.</p>
-                        </div>
+                </div>
+                <div class='row'>
+                    <div class='col'>
+                        <h3 class='minHead'>The Down and Dirty</h3>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <h3 class='minHead'>The Down and Dirty</h3>
-                        </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-6 col-lg-5'>
+                        <img class='rocImg' src='../static/images/class_imbalance.png'>
                     </div>
-                    <div class='row'>
-                        <div class='col-md-8 col-lg-4'>
-                            <p class='vertCenter'>Even the best machine learning models suffer if the data is riding dirty. You gotta make it fresh son. Important note (we about to get technical): we evaluated our models based on AUC. Because loan defaults were so rare in the dataset, the model would have 93% accuracy if it always predicted ‘no default’.</p>
-                        </div>
-                        <div class='col-md-4 col-lg-8'>
-                            <img class='rocImg' src='../static/images/class_imbalance.png'>
-                        </div>
+                    <div class='col-md-6 col-lg-7'>
+                        <p>Even the best machine learning models suffer if the data is riding dirty. You gotta make it fresh son. Important note (we about to get technical): we evaluated our models based on AUC. Because loan defaults were so rare in the dataset, the model would have 93% accuracy if it always predicted ‘no default’.</p>
                     </div>
-                    <div class='row'>
-                        <div class='col-md-8 col-lg-4'>
-                            <p class='vertCenter'>Because of this class imbalance, we plotted an ROC curve and calculated AUC to assess model performance. This is the ROC curve of a logistic regression model, before cleaning:</p>
-                        </div>
-                        <div class='col-md-4 col-lg-8'>  
-                            <img class='rocImg' src='../static/images/ROC_1_lr_dropna_only.png'>
-                        </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-6 col-lg-7'>
+                        <p>Because of this class imbalance, we plotted an ROC curve and calculated AUC to assess model performance. This is the ROC curve of a logistic regression model, before cleaning:</p>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <h3 class='minHead'>Step 1: Null Values + Outliers</h3>
-                        </div>
+                    <div class='col-md-6 col-lg-5'>
+                        <img class='rocImg' src='../static/images/ROC_1_lr_dropna_only.png'>
                     </div>
-                    <div class='row'>
-                        <div class='col-md-8 col-lg-4'>
-                            <ul class='vertCenter'>
-                                <li>Dropping entire rows of data gives us less data to play wit</li>
-                                <li>Instead we replaced that data using averages or medians (for income, we averaged by age). This is the ROC curve of a logistic regression model, after cleaning:</li>
-                            </ul>
-                        </div>
-                        <div class='col-md-4 col-lg-8'>
+                </div>
+                <div class='row'>
+                    <div class='col-md-6'>
+                        <h3 class='minHead'>Step 1: Null Values + Outliers</h3>
+                        <ul>
+                            <li>Dropping entire rows of data gives us less data to play wit</li>
+                            <li>Instead we replaced that data using averages or medians (for income, we averaged by age). This is the ROC curve of a logistic regression model, after cleaning:</li>
                             <img class='rocImg' src='../static/images/ROC_2_lr_after_cleaning.png'>
-                        </div>
+                        </ul>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <h3 class='minHead'>Step 2: Data Engineering</h3>
-                        </div>
-                    </div>
-                    <div class='row'>
-                        <div class='col-md-8 col-lg-4'>
-                            <ul class='vertCenter'>
-                                <li>Tried to create new features based on common sense (using the info we already got). This is the ROC curve of a logistic regression model, after new features are added:</li>
-                            </ul>
-                        </div>
-                        <div class='col-md-4 col-lg-8'>
+                    <div class='col-md-6'>
+                        <h3 class='minHead'>Step 2: Data Engineering</h3>
+                        <ul>
+                            <li>Tried to create new features based on common sense (using the info we already got). This is the ROC curve of a logistic regression model, after new features are added:</li>
                             <img class='rocImg' src='../static/images/ROC_3_lr_after_engineering.png'>
-                        </div>
+                        </ul>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <h3 class='minHead'>Step 3: Multicollinearity (wat?!)</h3>
-                        </div>
+                </div>
+                <div class='row'>
+                    <div class="col-md-12">
+                        <h3 class='minHead'>Step 3: Multicollinearity (wat?!)</h3>
+                        <ul>
+                            <li>Checked to see if any of our features were too similar</li>
+                            <li>Removed ones that were</li>
+                        </ul>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <ul>
-                                <li>Checked to see if any of our features were too similar</li>
-                                <li>Removed ones that were</li>
-                            </ul>
-                        </div>
+                    <div class='col-md-6'>
+                        <p class='centeredH'>Feature correlation heatmap before cleaning, engineering, and feature removal:</p>
+                        <img class='heatImg' src='../static/images/heatmap_1_before_cleaning_and_engineering.png'>
                     </div>
-                    <div class='row'>
-                        <div class='col-md-6'>
-                            <p class='centeredH'>Feature correlation heatmap before cleaning, engineering, and feature removal:</p>
-                            <img class='heatImg' src='../static/images/heatmap_1_before_cleaning_and_engineering.png'>
-                        </div>
-                        <div class='col-md-6'>
-                            <p class='centeredH'>Feature correlation heatmap after cleaning, engineering, and feature removal:</p>
-                            <img class='heatImg' src='../static/images/heatmap_2_after_cleaning_and_engineering.png'>
-                        </div>
+                    <div class='col-md-6'>
+                        <p class='centeredH'>Feature correlation heatmap after cleaning, engineering, and feature removal:</p>
+                        <img class='heatImg' src='../static/images/heatmap_2_after_cleaning_and_engineering.png'>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <h3 class='minHead'>Step 4: Standardize</h3>
-                        </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-12'>
+                        <h3 class='minHead'>Step 4: Standardize</h3>
+                        <ul>
+                            <li>Split the data so we had a training and testing set</li>
+                            <li>Scale that data so we could push it through the model</li>
+                        </ul>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <ul>
-                                <li>Split the data so we had a training and testing set</li>
-                                <li>Scale that data so we could push it through the model</li>
-                            </ul>
-                        </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-12'>
+                        <h3 class='minHead'>Step 5: Fit It</h3>
+                        <ul>
+                            <li>Tested a couple different models to see which had the best AUC score</li>
+                            <li>Found the best AUC score came from averaging probabilities of two models:</li>
+                        </ul>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <h3 class='minHead'>Step 5: Fit It</h3>
-                        </div>
+                    <div class='col-md-6'>
+                        <img class='rocImg' src='../static/images/ROC_4_lr_after_tuning.png'>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <ul>
-                                <li>Tested a couple different models to see which had the best AUC score</li>
-                                <li>Found the best AUC score came from averaging probabilities of two models:</li>
-                            </ul>
-                        </div>
+                    <div class='col-md-6'>
+                        <img class='rocImg' src='../static/images/ROC_5_rf_after_tuning.png'>
                     </div>
-                    <div class='row'>
-                        <div class='col-md-6'>
-                            <img class='rocImg' src='../static/images/ROC_4_lr_after_tuning.png'>
-                            <img class='rocImg' src='../static/images/ROC_5_rf_after_tuning.png'>
-                        </div>
-                        <div class='col-md-6'>
-                            <img class='rocImg' src='../static/images/ROC_6_gbm_after_tuning.png'>
-                            <img class='rocImg finalImg' src='../static/images/ROC_7_ens_after_tuning.png'>
-                        </div>
+                    <div class='col-md-6'>
+                        <img class='rocImg' src='../static/images/ROC_6_gbm_after_tuning.png'>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <h3 class='minHead'>Step 6: Predict It</h3>
-                        </div>
+                    <div class='col-md-6'>
+                        <img class='rocImg finalImg' src='../static/images/ROC_7_ens_after_tuning.png'>
                     </div>
-                    <div class='row'>
-                        <div class='col'>
-                            <ul>
-                                <li>Use those two models to let you know if you qualify based on the info you provide</li>
-                            </ul>
-                        </div>
+                </div>
+                <div class='row'>
+                    <div class='col-md-12'>
+                        <h3 class='minHead'>Step 6: Predict It</h3>
+                        <ul>
+                            <li>Use those two models to let you know if you qualify based on the info you provide</li>
+                        </ul>
                     </div>
                 </div>
             </div>
-        
 
             <!--Footer-->
             {% include 'blocks/footer.html' %}
