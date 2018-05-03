@@ -243,7 +243,7 @@ div.buttonWrapper {
 }
 
 h1 {
-    
+
 }
 
 .rocImg {
@@ -262,18 +262,19 @@ h1 {
 }
 
 .majHead {
-    text-align: center;
-    font-family: 'Alfa Slab One', cursive;
-    font-size: 38px;
+    text-align: left;
+    font-family: 'Rancho', cursive;
+    font-size: 50px;
     color: #062F4F;
     margin-top: 30px;
-    margin-bottom: 20px;
+    margin-bottom: 35px;
+    margin-bottom: 10px;
 }
 
 .minHead {
-    text-align: center;
-    font-family: 'Rancho', cursive;
-    font-size: 40px;
+    text-align: left;
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 35px;
     color: #062F4F;
     margin-top: 33px;
 }
@@ -289,4 +290,15 @@ h1 {
     position: relative;
     top:50%;
     transform: translateY(-50%);
+}
+
+p {
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 18px;
+}
+
+li {
+    font-family: 'Ropa Sans', sans-serif;
+    font-size: 18px;
+    padding-left: 15px;
 }
