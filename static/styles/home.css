@@ -84,6 +84,7 @@ select {
     border-radius: 25px;
     padding-top: 10px;
     padding-bottom: 10px;
+    margin-bottom: 20px;
     font-family: 'Ropa Sans', sans-serif;
 }
 
@@ -132,7 +133,7 @@ div.buttonWrapper {
 #resultsInner {
     text-align: center;
     position: relative;
-    top: 50%;
+    top: 45%;
     transform: translateY(-50%);
 }
 
