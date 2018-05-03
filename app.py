@@ -3,6 +3,8 @@
 #################################################
 from flask import Flask, render_template, jsonify, redirect
 from flask import Response
+from flask_cors import CORS
+from flask_compress import Compress
 
 import sqlalchemy
 from sqlalchemy.ext.automap import automap_base
@@ -24,6 +26,8 @@ from processing.modelTuning import shapeItUp, add_incomeperdependent_column, add
 # Flask Setup
 #################################################
 app = Flask(__name__)
+Compress(app)
+CORS(app)
 
 # Full dashboard
 @app.route('/')
